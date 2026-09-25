@@ -1,11 +1,14 @@
 """
-Basic smoke tests for the FastAPI service. Requires a model already
-registered in MLflow (run train.py first).
+Basic smoke tests for the FastAPI service.
 """
+
+import sys
+import os
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from fastapi.testclient import TestClient
-
 from app.main import app
-
 client = TestClient(app)
 
 
